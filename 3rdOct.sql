@@ -39,3 +39,20 @@ WHERE
 AND
     4e6 >= first_sell_price;/');
 END;
+
+
+BEGIN adbk25f.upload_solution (104, 
+'SELECT
+    o_name,
+    address
+FROM
+    carmechanic.m_owner
+WHERE 
+    LENGTH(LOWER(o_name)) - LENGTH(REPLACE(LOWER(o_name), ''e'', '''')) = 2
+AND
+    address NOT LIKE ''%Debrecen%''
+AND
+    LENGTH(o_name) > 8
+ORDER BY
+    o_name;/');
+END;
