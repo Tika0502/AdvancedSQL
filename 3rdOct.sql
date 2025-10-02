@@ -27,3 +27,15 @@ ORDER BY
 END;
 
 
+BEGIN adbk25f.upload_solution (103,
+'SELECT
+    c_id,
+    first_sell_date,
+    first_sell_price
+FROM 
+    carmechanic.m_car
+WHERE
+    1e6 <= first_sell_price
+AND
+    4e6 >= first_sell_price;/');
+END;
